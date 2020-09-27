@@ -51,6 +51,7 @@ function startQuiz() {
     results.style.display = 'none'
     answerButtons.forEach(btn => {
         btn.disabled = false;
+        btn.style.display = "block"
     })
     qTracker = 0;
     startBtn.style.display = 'none'
@@ -65,6 +66,7 @@ function newQuestion() {
     if(availableQuestions.length === 0) {
 answerButtons.forEach(btn => {
     btn.disabled = true;
+    btn.style.display = "none"
 })
 startBtn.innerHTML = `Let's try again!`
 startBtn.style.display = 'block';
