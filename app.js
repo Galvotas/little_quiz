@@ -67,6 +67,7 @@ function newQuestion() {
 answerButtons.forEach(btn => {
     btn.disabled = true;
     btn.style.display = "none"
+    question.innerHTML = "Why not try again?!"
 })
 startBtn.innerHTML = `Let's try again!`
 startBtn.style.display = 'block';
@@ -81,7 +82,7 @@ scoreElement.innerHTML = `Your score is: ${score}`
         question.innerHTML = currentQuestion.question;
         const answers = currentQuestion.incorrect_answers;
         const filteredAnswers = Array.from(new Set(answers))
-        const ranNum = Math.floor(Math.random() * 3) + 1;
+        const ranNum = Math.floor(Math.random() * 4) ;
         filteredAnswers.splice(ranNum, 0, currentQuestion.correct_answer)
        answerButtons.forEach((btn, index) => {
            btn.innerHTML = filteredAnswers[index]
